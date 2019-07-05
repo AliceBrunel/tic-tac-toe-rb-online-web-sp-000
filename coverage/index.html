@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-05T01:10:37+00:00">2019-07-05T01:10:37+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-05T01:12:39+00:00">2019-07-05T01:12:39+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -342,58 +342,58 @@
           <code class="ruby">def turn_count(board)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="43">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="43">
           
-          <code class="ruby">  turns = 0</code>
+          
+          <code class="ruby">  # counts occupied positions</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="44">
           <span class="hits">2</span>
           
-          <code class="ruby">  board.each do |token|</code>
+          <code class="ruby">  count = 0</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="45">
+        <li class="covered" data-hits="2" data-linenumber="45">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  board.each do |index|</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="46">
           <span class="hits">18</span>
           
-          <code class="ruby">    if token == &quot;X&quot; || token == &quot;O&quot;</code>
+          <code class="ruby">    if index != &quot; &quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="46">
+        <li class="covered" data-hits="5" data-linenumber="47">
           <span class="hits">5</span>
           
-          <code class="ruby">      turns += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      count += 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
+        <li class="covered" data-hits="2" data-linenumber="50">
           <span class="hits">2</span>
           
-          <code class="ruby">  turns</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">    count</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"> end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
@@ -723,7 +723,7 @@
         <li class="covered" data-hits="3" data-linenumber="106">
           <span class="hits">3</span>
           
-          <code class="ruby">   puts &quot;Cats Game!&quot;</code>
+          <code class="ruby">   puts &quot;Cat&#39;s Game!&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
