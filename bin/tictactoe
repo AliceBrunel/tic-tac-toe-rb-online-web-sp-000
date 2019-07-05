@@ -10,6 +10,4 @@ display_board(board)
 
 while over?(board) != true
   play(board)
-  draw?(board)
-  won?(board)
 end
