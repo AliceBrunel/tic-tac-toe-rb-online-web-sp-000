@@ -7,7 +7,5 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
 
+play(board)
 
-while over?(board) != true
-  play(board)
-end
