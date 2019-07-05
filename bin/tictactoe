@@ -7,6 +7,8 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
 
-until over?(board) == true
-  play(board)
-end
+
+play(board)
+over?(board)
+draw?(board)
+won?(board)
