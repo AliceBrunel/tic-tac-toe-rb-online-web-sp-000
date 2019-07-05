@@ -95,4 +95,11 @@ def winner(board)
   end
 end
 
+def play(board)
+  turn = 1
+  until turn == 10 && true
+  turn += 1
+  turn(board)
+  end
+end
 
