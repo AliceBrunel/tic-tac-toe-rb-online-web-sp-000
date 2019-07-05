@@ -14,7 +14,7 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
- def move(board, index,current_player)
+ def move(board, index, current_player)
   board[index] = current_player
 end 
 
@@ -30,8 +30,8 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  if valid_move?(board,index) == true
-    move(board, index, current_player)
+  if valid_move?(board, index) == true
+    move(board, index, "X")
     display_board(board)
   else
     puts "This move is not correct."
@@ -50,7 +50,7 @@ def turn_count(board)
 
 end
 
-def player(board)
+def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
 
