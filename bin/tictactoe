@@ -9,5 +9,4 @@ display_board(board)
 
 until over?(board) == true
   play(board)
-  
 end
