@@ -26,16 +26,16 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-def turn(array)
+def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(array,index) == true
-    move(array, index, "X")
-    display_board(array)
+    move(board, index, "X")
+    display_board(board)
   else
     puts "This move is not correct."
-    turn(array)
+    turn(board)
   end
 end
 
