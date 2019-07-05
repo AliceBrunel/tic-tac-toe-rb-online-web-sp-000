@@ -59,7 +59,8 @@ def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
 
-# Define your WIN_COMBINATIONS constant
+
+# Each winning combinations
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -71,7 +72,8 @@ WIN_COMBINATIONS = [
   [6,4,2]
 ]
 
-# Define won?, full?, draw?, over?, and winner below
+
+# Define won?, full?, draw?, over?, and winner
 def won?(board)
   WIN_COMBINATIONS.detect do |win_array|
     board[win_array[0]] == board[win_array[1]] &&
@@ -80,23 +82,29 @@ def won?(board)
   end
 end
 
+
+
 def full?(board)
   board.all?{|token| token == "X" || token == "O"}
 end
+
 
 def draw?(board)
   full?(board) && !won?(board)
 end
 
+
 def over?(board)
   won?(board) || full?(board)
 end
+
 
 def winner(board)
   if winning_array = won?(board)
     board[winning_array.first]
   end
 end
+
 
 def play(board)
   while !over?(board) && !won?(board) && !draw?(board)
