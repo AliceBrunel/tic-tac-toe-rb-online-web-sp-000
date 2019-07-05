@@ -40,15 +40,15 @@ def turn(board)
 end
 
 def turn_count(board)
-  turns = 0
-  board.each do |token|
-    if token == "X" || token == "O"
-      turns += 1
+  # counts occupied positions
+  count = 0
+  board.each do |index|
+    if index != " "
+      count += 1
     end
   end
-  turns
-
-end
+    count
+ end
 
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
