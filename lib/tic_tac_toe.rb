@@ -8,34 +8,41 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+
 def input_to_index(user_input)
   user_input.to_i - 1
 end
 
- def move(board, index, current_player)
+
+def move(board, index, current_player)
   board[index] = current_player
 end 
+
 
 def position_taken?(board, index)
   board[index] != " "
 end
 
+
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
+
 
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  if valid_move?(board, index) == true
-    move(board, index, current_player(board))
-    display_board(board)
-  else
-    puts "This move is not correct."
-    turn(board)
-  end
+  
+    if valid_move?(board, index) == true
+      move(board, index, current_player(board))
+      display_board(board)
+    else
+      puts "This move is not correct."
+      turn(board)
+    end
 end
+
 
 def turn_count(board)
   turns = 0
@@ -44,15 +51,13 @@ def turn_count(board)
       turns += 1
     end
   end
-  turns
-
+turns
 end
+
 
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
-
-
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
@@ -103,6 +108,5 @@ def play(board)
  if draw?(board)
    puts "Cat's Game!"
  end
-
 end
 
