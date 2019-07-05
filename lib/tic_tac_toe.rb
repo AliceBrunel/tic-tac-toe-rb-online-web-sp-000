@@ -12,21 +12,17 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-
  def move(board, index, current_player)
   board[index] = current_player
-end
-
+end 
 
 def position_taken?(board, index)
   board[index] != " "
 end
 
-
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
-
 
 def turn(board)
   puts "Please enter 1-9:"
@@ -41,7 +37,6 @@ def turn(board)
   end
 end
 
-
 def turn_count(board)
   turns = 0
   board.each do |token|
@@ -50,8 +45,8 @@ def turn_count(board)
     end
   end
   turns
-end
 
+end
 
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
@@ -73,10 +68,10 @@ WIN_COMBINATIONS = [
 
 # Define won?, full?, draw?, over?, and winner below
 def won?(board)
-  WIN_COMBINATIONS.detect do |combo|
-    board[combo[0]] == board[combo[1]] &&
-    board[combo[1]] == board[combo[2]] &&
-    position_taken?(board, combo[0])
+  WIN_COMBINATIONS.detect do |win_array|
+    board[win_array[0]] == board[win_array[1]] &&
+    board[win_array[1]] == board[win_array[2]] &&
+    position_taken?(board, win_array[0])
   end
 end
 
@@ -93,8 +88,8 @@ def over?(board)
 end
 
 def winner(board)
-  if winning_combo = won?(board)
-    board[winning_combo.first]
+  if winning_array = won?(board)
+    board[winning_array.first]
   end
 end
 
@@ -107,6 +102,7 @@ def play(board)
  end
  if draw?(board)
    puts "Cat's Game!"
- endx
+ end
+
 end
 
